@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+// Variables
+// Responsive
+$mobile: 767px;
+$tablet: 992px;
+$laptop: 1200px;
+// Colors
+$bg: #E6E6E6;
+$primary: #1B2741;
+$blue: #438CDB;
+
+@mixin sm-and-down {
+    @media (max-width: $mobile - 1) {
+        @content;
+    }
+}
+
+@mixin sm-and-up {
+    @media (min-width: $mobile) and (min-height: $mobile-land + 1) {
+        @content;
+    }
+}
+
+@mixin md-and-down {
+    @media (max-width: $tablet - 1) {
+        @content;
+    }
+}
+
+@mixin md-only {
+    @media (min-width: $mobile ) and (max-width: $laptop ) {
+        @content;
+    }
+}
+
+@mixin md-and-up {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin lg-and-down {
+    @media (max-width: $laptop - 1) {
+        @content;
+    }
+}
+
+@mixin lg-and-up {
+    @media (min-width: $laptop) {
+        @content;
+    }
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background: $bg;
+}
+
+// General classes
+.color-primary {
+    color: $primary;
+}
+
+// Navbar
+#nav {
+    padding: 2.5rem 0;
+
+    .navbar-brand {
+        // max-width: 22rem;
+        max-width: 60%;
+
+        @include md-and-up {
+            max-width: 30%;
+        }
+    }
+
+    .navbar-collapse {
+        flex-grow: unset;
+
+        .navbar-nav {
+            li.nav-item {
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 0.65rem;
+                transition: 0.2s;
+                border-bottom: 3px solid rgba($blue, 0);
+
+                &:hover {
+                    border-bottom: 3px solid rgba($blue, 1);
+                }
+            }
+        }
+    }
+}
+
+// Content
+#content {
+    .main {
+        background: no-repeat url('/assets/bg-1.png');
+        background-size: 100%;
+        background-position-y: -1rem;
+        padding-top: 12rem;
+
+        @include sm-and-down {
+            padding-top: 6rem;
+            background-position-y: -1rem;
+        }
+
+        @include md-and-up {
+            padding-top: 6rem;
+            background-position-y: -3rem;
+        }
+
+        .part-1 {
+            margin-bottom: 4rem;
+            
+            @include md-and-up {
+                margin-bottom: 8rem;
+            }
+    
+            h1 {
+                margin-bottom: 2rem;
+            }
+    
+            p {
+                line-height: 1.5rem;
+            }
+        }
+    
+        .part-2 {
+            div.col-md-6 {
+                margin-bottom: 3rem;
+
+                @include md-and-up {
+                    margin-bottom: 0;
+                }
+            }
+
+            img {
+                margin: 0 auto;
+                max-width: 70%;
+            }
+
+            h5 {
+                margin-top: -0.5rem;
+            }
+
+            p {
+                // color: red;
+                // text-align: justify;
+                line-height: 1.3rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
