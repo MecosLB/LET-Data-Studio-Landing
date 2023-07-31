@@ -7,7 +7,8 @@ $tablet: 992px;
 $laptop: 1200px;
 // Colors
 $bg: #E6E6E6;
-$primary: #1B2741;
+$bg-blue: #1A2640;
+$primary: #1A2640;
 $blue: #438CDB;
 
 @mixin sm-and-down {
@@ -70,6 +71,10 @@ p {
     color: $primary;
 }
 
+.bg-blue {
+    background: $bg-blue;
+}
+
 // Navbar
 #nav {
     padding: 2.5rem 0;
@@ -106,7 +111,7 @@ p {
 // Content
 #content {
     .main {
-        background: no-repeat url('/assets/bg-1.png');
+        background: no-repeat url('assets/bg-1.png');
         background-size: 100%;
         background-position-y: -1rem;
         padding-top: 12rem;
@@ -167,7 +172,7 @@ p {
     }
 
     .specialty {
-        background: no-repeat url('/assets/bg-2.png');
+        background: no-repeat url('assets/bg-2.png');
         background-size: 100%;
         background-position: bottom;
 
@@ -203,6 +208,12 @@ p {
                 font-weight: 800;
                 margin: 0;
             }
+        }
+    }
+
+    .copilot {
+        h2 {
+            font-weight: 800;
         }
     }
 }
